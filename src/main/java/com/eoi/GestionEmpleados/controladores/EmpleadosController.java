@@ -23,30 +23,37 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eoi.GestionEmpleados.entidades.Empleado;
 import com.eoi.GestionEmpleados.servicios.EmpleadosService;
 
+import io.swagger.v3.oas.annotations.Operation;
+
 @RestController
 @RequestMapping("/gestion_empleados")
 public class EmpleadosController {
 	@Autowired
 	private EmpleadosService empleadoService;
 	
+	@Operation(summary = "Obtiene toda la lista de empleados")
 	@GetMapping() //Con el Get, listamos todos los empleados
 	public List<Empleado> list() {
 		return empleadoService.findAll();
 	}
 	
+	@Operation(summary = "Obtiene un empleado por su id")
 	@GetMapping("/{id}") //Con el Get, elegiremos un empleado por id
 	public Empleado findById(@PathVariable Long id) {
 		return empleadoService.findById(id);
 	}
 	
+	@Operation(summary = "Añade un empleado a la lista")
 	@PostMapping() //Con el post, añadimos un empleado por id
 	public Empleado insert(@Valid @RequestBody Empleado e) {
 	return empleadoService.insert(e);
 	}
+	@Operation(summary = "Modifica un empleado de la lista")
 	@PutMapping("/{id}") //Con el Put, modificamos un empleado con su id
 	public Empleado update(@PathVariable long id,@Valid @RequestBody Empleado e) {
 	return empleadoService.update(id, e);
 	}
+	@Operation(summary = "Elimina un empleado de la lista")
 	@DeleteMapping("/{id}") //Con el Delete, borramos un empleado con su id
 	public void delete(@PathVariable long id) {
 	empleadoService.delete(id);
