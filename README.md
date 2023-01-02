@@ -14,7 +14,7 @@ cd gestion-empleados
 mvn spring-boot:run
 ```
 
-La aplicación es puro backend, por lo que tendremos que consumir los servicios mediante postman o algún cliente similar.
+La aplicación es puro backend, por lo que tendremos que consumir los servicios mediante postman o algún cliente similar. Puedes también consultarlos y comprobarlos  mediante su swagger, solo tendrás que ir a: 'http://localhost:8080/swagger-ui/index.html#/'
 
 Listar empleados:
 
