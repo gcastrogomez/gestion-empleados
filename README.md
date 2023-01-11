@@ -2,7 +2,7 @@
 Gestión de empleados
 
 Gestión de empleados es mi proyecto del curso Programación full stack de la Escuela de Organizaciones Industriales, impartido a finales
-de 2022. Este backend tiene un front en Angular en el siguiente repositorio 
+de 2022. Este backend tiene un front en Angular.
 
 ## Running gestion-empleados locally
 Es una aplicación backend construida con maven y spring en la que se expone un API para crear, actualizar, eliminar y listar empleados. Puedes levantar la aplicacion con los siguientes comandos:
